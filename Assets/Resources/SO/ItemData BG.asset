@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893fbb20eec4b614aa8f4fce61f05144, type: 3}
+  m_Name: ItemData BG
+  m_EditorClassIdentifier: 
+  items:
+  - id: 0
+    icon: {fileID: 21300000, guid: 006d1494c2e7550459d5a6c6b7d3957e, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1200
+    adsRequire: 0
+  - id: 1
+    icon: {fileID: 21300000, guid: 9880f7caf1b2a21498331fd7beda22f2, type: 3}
+    isGold: 0
+    isAds: 1
+    goldPrice: 0
+    adsRequire: 5
+  - id: 2
+    icon: {fileID: 21300000, guid: 7fefd1fb7e009e24b93ad68ac8eb7bdd, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1234
+    adsRequire: 0
+  - id: 3
+    icon: {fileID: 21300000, guid: fa6060b578dc231409978a0a2fc6b327, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1234
+    adsRequire: 0
+  - id: 4
+    icon: {fileID: 21300000, guid: 44a993cfea3a9664696b10c93f71b368, type: 3}
+    isGold: 0
+    isAds: 1
+    goldPrice: 0
+    adsRequire: 3
+  - id: 5
+    icon: {fileID: 21300000, guid: 4d2fdf908ce17574a9f23593e41534ee, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1234
+    adsRequire: 0
+  - id: 6
+    icon: {fileID: 21300000, guid: 46a661df82ad38344be69f1e727a75a5, type: 3}
+    isGold: 0
+    isAds: 1
+    goldPrice: 0
+    adsRequire: 4
+  - id: 7
+    icon: {fileID: 21300000, guid: 48edcbba7ca354d4f9d8c125512b9a7a, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1234
+    adsRequire: 0
+  - id: 8
+    icon: {fileID: 21300000, guid: 6e33edaefbd46634584e5e21e924baad, type: 3}
+    isGold: 1
+    isAds: 0
+    goldPrice: 1234
+    adsRequire: 0

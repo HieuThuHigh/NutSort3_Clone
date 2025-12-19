@@ -1,0 +1,10 @@
+{
+  "name": "com.bedtime.editor-history",
+  "displayName": "Editor History",
+  "description": "View and navigate your selection history",
+  "version": "1.4.0",
+  "author": {
+    "name": "Bedtime Digital Games",
+    "url": "https://github.com/BedtimeDigitalGames/Unity-Editor-History"
+  }
+}

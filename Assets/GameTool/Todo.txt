@@ -1,0 +1,7 @@
+v 1.0:
+- Thêm native và banner khi dùng kẹp với network mediation khác : DOING
+- Appopen của Max
+- Tích hợp Gadsme
+- Tích hợp Odeeo
+- Tích hợp FALCON
+- Thêm defsymbol DEFAULT_TRACKING & check lại tracking

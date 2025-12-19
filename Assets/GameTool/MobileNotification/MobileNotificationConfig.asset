@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a64bdf1bc064a88814166a580db8f6, type: 3}
+  m_Name: MobileNotificationConfig
+  m_EditorClassIdentifier: 
+  notificationDays:
+  - day: 1
+    NotificationContents:
+    - title: "I guess you're busy \U0001F914"
+      text: But everyone is waiting for you in Garten of Rainbow Monsters
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 11.5
+    - title: "Headed to Bed? \U0001F6CF\U0001F4B0"
+      text: Curl up next to some Free Coins!
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 20.5
+  - day: 2
+    NotificationContents:
+    - title: Already missing you
+      text: Baby Bird Rescue is completed, come back and take your gift
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 12
+    - title: Earn 1000 coins free now!
+      text: Open Garten of Rainbow Monsters to collect for free.
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 21
+  - day: 3
+    NotificationContents:
+    - title: "Urgent \u26A1\U0001F4A3"
+      text: Bad students are punished in the Naughty Corner. They need you!
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 14
+    - title: "\u26A1Rainbow Monster's Letter\u26A1"
+      text: " Muahahaha \U0001F47E Play with me, I'm not a monster \U0001F47E"
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 20
+  - day: 4
+    NotificationContents:
+    - title: "Huge present is sent to you \U0001F49D"
+      text: Collect now or you will lose 1500 coins
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 13
+    - title: 'Oops! You know what? '
+      text: A monster just kidnaps a baby. Come to rescue them.
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 21
+  - day: 5
+    NotificationContents:
+    - title: "It's been 5 days since we last met...\U0001F63F"
+      text: 'Come back please, I have some special things for you '
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 13
+    - title: "Time's running out! \u23F0\U0001F4B8"
+      text: A free skin is available ONLY TODAY
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 21.5
+  - day: 7
+    NotificationContents:
+    - title: "Special Reward \U0001F48E\U0001F4B0"
+      text: 'Unbox free diamonds, free coins now! '
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 13
+    - title: "Last chance for free gift \u23F0"
+      text: Receive all diamonds before falling asleep!
+      largeIcon: large_1
+      smallIcon: small_1
+      pushTime: 21

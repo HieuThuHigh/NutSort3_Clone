@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4bd13ab8b16450f8aa26387771d48d, type: 3}
+  m_Name: CanvasPrefTable
+  m_EditorClassIdentifier: 
+  ListLayer: 000000000100000002000000
+  Serializers:
+  - key: SettingPopup
+    settingUI:
+      UIType: 1
+      baseUI: {fileID: 3077369161200816026, guid: 4c2ed29919d155043af1e56e5ba42b5e, type: 3}
+      resourcePath: Prefab/SettingPopup
+    isDuplicatedKey: 0
+  - key: Home
+    settingUI:
+      UIType: 0
+      baseUI: {fileID: 6134841765879783187, guid: 8c35cb8fb7c575f44a0e0895fa9c99d5, type: 3}
+      resourcePath: Prefab/Home
+    isDuplicatedKey: 0
+  - key: GamePlayUI
+    settingUI:
+      UIType: 0
+      baseUI: {fileID: 4851821445685918351, guid: 67c9f33cffff63a408fb07067766c1fd, type: 3}
+      resourcePath: Prefab/GamePlayUI
+    isDuplicatedKey: 0
+  - key: ShopPopup
+    settingUI:
+      UIType: 1
+      baseUI: {fileID: 1728155379623334053, guid: 15b5828e44d6faa48a74537e4f4288db, type: 3}
+      resourcePath: Prefab/ShopPopup
+    isDuplicatedKey: 0

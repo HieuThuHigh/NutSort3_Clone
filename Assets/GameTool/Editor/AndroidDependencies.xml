@@ -1,0 +1,26 @@
+<dependencies>
+  <androidPackages>
+    <androidPackage spec="com.android.installreferrer:installreferrer:2.2">
+      <androidSdkPackageIds>
+        <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+      </androidSdkPackageIds>
+      <!-- "repositories" are optional and contain the set of additional
+           repository URIs to search for this package. -->
+      <repositories>
+        <repository>https://maven.google.com</repository>
+      </repositories>
+    </androidPackage>
+
+      <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1">
+      <androidSdkPackageIds>
+        <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+      </androidSdkPackageIds>
+      <!-- "repositories" are optional and contain the set of additional
+           repository URIs to search for this package. -->
+      <repositories>
+        <repository>https://maven.google.com</repository>
+      </repositories>
+    </androidPackage>
+
+  </androidPackages>
+</dependencies>

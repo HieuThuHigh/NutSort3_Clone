@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de78b31a712344584a753e53ace805b5, type: 3}
+  m_Name: GameToolSettingsIOS
+  m_EditorClassIdentifier: 
+  buildVersion: 2
+  useSpine: 0
+  useGGReview: 0
+  useLocalNotification: 0
+  useFirebase: 0
+  useIap: 0
+  useFirebaseIAP: 0
+  mmpType: 0
+  adjustAppToken: 
+  afDevKey: 
+  afAppID: 
+  singularAPIKey: 
+  singularAPISecret: 
+  listAdsFullMediation: []
+  useBackfill: 1
+  bannerMediation: 0
+  aoaMediation: 0
+  nativeMediation: 0
+  timeRetryLoadAds: 6
+  useAdverty: 0
+  admobAppID: ca-app-pub-3940256099942544~3347511713
+  admobAppOpenID:
+  - /21775744923/example/app-open
+  admobNativeID:
+  - /6499/example/native
+  admobBannerID:
+  - /6499/example/banner
+  admobCollapsibleBannerID:
+  - ca-app-pub-3940256099942544/2014213617
+  admobInterstitialID:
+  - /21775744923/example/interstitial
+  admobRewardVideoID:
+  - /21775744923/example/rewarded
+  irsAppKey: 
+  applovinSDKKey: 
+  applovinBannerID: 
+  applovinInterstitialID: 
+  applovinRewardVideoID: 

@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4524708520683594005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3631009976525928015}
+  - component: {fileID: 3269093930110503235}
+  m_Layer: 0
+  m_Name: FirebaseRemote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3631009976525928015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524708520683594005}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3269093930110503235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524708520683594005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b31b661dce63245bb463cf31d1dbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remoteRows:
+  - className: ApiInfor
+    remoteKey: ApiInfor
+    customClass: 0
+    param:
+    - variableType: 3
+      paramName: IsEnableDebug
+    - variableType: 3
+      paramName: UseGDPR
+    - variableType: 2
+      paramName: InterstitialInterval
+    - variableType: 1
+      paramName: AdmobInterstitialInterval
+    - variableType: 2
+      paramName: TimeLoading
+    - variableType: 3
+      paramName: AppOpenAfterAds
+    - variableType: 1
+      paramName: BannerSizeId
+  - className: StoreConfig
+    remoteKey: StoreConfig
+    customClass: 0
+    param:
+    - variableType: 0
+      paramName: GooglePlayLinkGame
+    - variableType: 0
+      paramName: AppStoreLinkGame
+    - variableType: 3
+      paramName: ForceUpdate
+    - variableType: 4
+      paramName: ListVersion
+  - className: GameRemote
+    remoteKey: GameRemote
+    customClass: 0
+    param:
+    - variableType: 3
+      paramName: NoInternetBlock
+    - variableType: 3
+      paramName: useAdsIngame
+    - variableType: 3
+      paramName: ShowMoregameVictory
+    - variableType: 3
+      paramName: useAppopenFloor
+    - variableType: 1
+      paramName: BonusDiamondRewardAds
+  - className: SpinConfig
+    remoteKey: SpinConfig
+    customClass: 0
+    param:
+    - variableType: 1
+      paramName: TimeResetSpin
+    - variableType: 6
+      paramName: ListPercentageSpin
+    - variableType: 5
+      paramName: ListTypeSpinReward
+    - variableType: 5
+      paramName: ListTypeSpin
+    - variableType: 5
+      paramName: ListValueSpin
+  - className: DailyRewardConfig
+    remoteKey: DailyRewardConfig
+    customClass: 0
+    param:
+    - variableType: 1
+      paramName: dailyCoinDay1
+    - variableType: 1
+      paramName: dailyCoinDay2
+    - variableType: 1
+      paramName: dailyCoinDay3
+    - variableType: 1
+      paramName: dailyCoinDay4
+    - variableType: 1
+      paramName: dailyCoinDay5
+    - variableType: 1
+      paramName: dailyCoinDay6
+    - variableType: 1
+      paramName: dailyCoinDay7
+  - className: SkinConfig
+    remoteKey: SkinConfig
+    customClass: 0
+    param:
+    - variableType: 5
+      paramName: ListTotalSkin
+    - variableType: 5
+      paramName: Cost
+    - variableType: 5
+      paramName: TypeSkinResource
+  - className: IAPConfig
+    remoteKey: IAPConfig
+    customClass: 0
+    param:
+    - variableType: 1
+      paramName: CoinPackAmount
+    - variableType: 1
+      paramName: DiamondPackAmount
+    - variableType: 1
+      paramName: CoinAdsAmount
+    - variableType: 1
+      paramName: DiamondAdsAmount
+  - className: IAPId
+    remoteKey: IAPId
+    customClass: 0
+    param:
+    - variableType: 0
+      paramName: RemoveAds
+    - variableType: 0
+      paramName: SpecialOffer
+    - variableType: 0
+      paramName: LegendaryBundle
+    - variableType: 0
+      paramName: Coin1
+    - variableType: 0
+      paramName: Coin2
+    - variableType: 0
+      paramName: Coin3
+    - variableType: 0
+      paramName: Coin4
+    - variableType: 0
+      paramName: Coin5
+    - variableType: 0
+      paramName: PiggyBank
+    - variableType: 0
+      paramName: SpecialDeal
+  IsFirebaseFetchCompleted: 0
+  apiInforDF:
+    IsEnableDebug: 0
+    UseGDPR: 0
+    InterstitialInterval: 0
+    AdmobInterstitialInterval: 0
+    TimeLoading: 0
+    AppOpenAfterAds: 0
+    BannerSizeId: 0
+  storeConfigDF:
+    GooglePlayLinkGame: 
+    AppStoreLinkGame: 
+    ForceUpdate: 0
+    ListVersion: []
+  gameRemoteDF:
+    NoInternetBlock: 0
+    useAdsIngame: 0
+    ShowMoregameVictory: 0
+    useAppopenFloor: 0
+    BonusDiamondRewardAds: 0
+  spinConfigDF:
+    TimeResetSpin: 0
+    ListPercentageSpin: []
+    ListTypeSpinReward: 
+    ListTypeSpin: 
+    ListValueSpin: 
+  dailyRewardConfigDF:
+    dailyCoinDay1: 0
+    dailyCoinDay2: 0
+    dailyCoinDay3: 0
+    dailyCoinDay4: 0
+    dailyCoinDay5: 0
+    dailyCoinDay6: 0
+    dailyCoinDay7: 0
+  skinConfigDF:
+    ListTotalSkin: 
+    Cost: 
+    TypeSkinResource: 
+  iAPConfigDF:
+    CoinPackAmount: 0
+    DiamondPackAmount: 0
+    CoinAdsAmount: 0
+    DiamondAdsAmount: 0
+  iAPidDF:
+    RemoveAds: 
+    SpecialOffer: 
+    LegendaryBundle: 
+    Coin1: 
+    Coin2: 
+    Coin3: 
+    Coin4: 
+    Coin5: 
+    PiggyBank: 
+    SpecialDeal: 
