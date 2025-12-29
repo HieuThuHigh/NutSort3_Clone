@@ -21,13 +21,30 @@ namespace GameToolSample.GameDataScripts.Scripts
         public DataField Data;
         public GameModeData GameModeData;
 
-
         protected override void Awake()
         {
             base.Awake();
             SaveGameData.LoadAllData();
+            
         }
-
+        public int SelectedShopBgId
+        {
+            get => Data.SelectedShopBgId;
+            set
+            {
+                Data.SelectedShopBgId = value;
+                SaveGameData.SaveData(eData.SelectedShopBgId, Data.SelectedShopBgId);
+            }
+        }
+        public List<int> ListShopBgOwned
+        {
+            get => Data.ListShopBgOwned;
+            set
+            {
+                Data.ListShopBgOwned = value;
+                SaveGameData.SaveData(eData.ListShopBgOwned, Data.ListShopBgOwned);
+            }
+        }
         public void OnAllDataLoaded()
         {
             SetDataFake();

@@ -14,7 +14,6 @@ public class ItemData : ScriptableObject
 public class ItemInfo
 {
     public int id;
-    
     public Sprite icon;
 
     [Header("Buy Type")]
@@ -24,4 +23,7 @@ public class ItemInfo
     [Header("UI Value")]
     public int goldPrice;
     public int adsRequire;
+    public int adsWatched;
+    public bool isOwned;
+    
 }

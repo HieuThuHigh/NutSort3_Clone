@@ -76,6 +76,8 @@ MonoBehaviour:
     CountDownTimeSpin: -1
     ListIdSkinSpin: 
     CurrentLanguage: 0
+    SelectedShopBgId: 0
+    ListShopBgOwned: 
   GameModeData:
     GameMode: 0
     Level: 0

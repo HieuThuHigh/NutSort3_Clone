@@ -56,5 +56,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         LegendaryBundleBuyIAP,
         SpecialDealBuyIAP,
         SpecialDealExp,
+        SelectedShopBgId,
+        ListShopBgOwned
     }
 }

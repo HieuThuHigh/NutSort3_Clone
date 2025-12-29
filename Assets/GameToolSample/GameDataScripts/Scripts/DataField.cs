@@ -58,6 +58,10 @@ namespace GameToolSample.GameDataScripts.Scripts
         public List<int> ListIdSkinSpin = new List<int>();
 
         [Header("LANGUAGE")] public int CurrentLanguage;
+        [Header("ITEM")] public int SelectedShopBgId;
+        public List<int> ListShopBgOwned;
+
+
     }
 
 

@@ -10,13 +10,13 @@ using GameToolSample.UIFeature.BasicPopup.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopPopup : BaseUI
+public class ShopPopup : SingletonUI<ShopPopup>
 {
     [SerializeField] Button backButton;
     [SerializeField] Button coinAdsButton;
     [SerializeField] Button ringTabBtn;
     [SerializeField] Button bgTabBtn; 
-    [SerializeField] Image bgImg;
+    public Image bgImg;
     [SerializeField] Image iconRingTab;
     [SerializeField] Image iconBgTab;
     [SerializeField] Sprite[] ringTabStateSprs;
@@ -47,21 +47,40 @@ public class ShopPopup : BaseUI
         coinAdsButton.onClick.AddListener(CoinAdsClick);
         SpawnItems(ringItemData, ringItemPrefab, ringContent);
         SpawnItems(bgItemData, bgItemPrefab, bgContent);
-        
+        if (GameData.Instance.FirstOpen)
+        {
+            ResetAllAdsProgress();
+        }
         SwitchTab(0);
     }
-
+    void ResetAllAdsProgress()
+    {
+        foreach (var item in ringItemData.items)
+        {
+            item.adsWatched = 0;
+            item.isOwned = false;
+        }
+        
+        foreach (var item in bgItemData.items)
+        {
+            item.adsWatched = 0;
+            item.isOwned = false;
+        }
+        
+        // Lưu ScriptableObject
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(ringItemData);
+        UnityEditor.EditorUtility.SetDirty(bgItemData);
+        #endif
+    }
     private void CoinAdsClick()
     {
-        Debug.LogError("coin cong");
         GameData.Instance.AddCurrency(ItemResourceType.Coin, GameConfig.Instance.CoinFreeAds);
     }
 
     private void BackClick()
     {
         Pop();
-        Debug.LogError("VAR");
-        
     }
 
     void SpawnItems(ItemData data, ItemShopPrefab prefab, Transform targetContent)
