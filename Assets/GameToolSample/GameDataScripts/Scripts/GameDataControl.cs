@@ -35,6 +35,9 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.SaveData(eData.CountDownTimeSpin, GameData.Instance.Data.CountDownTimeSpin);
             SaveGameData.SaveData(eData.ListIdSkinSpin, GameData.Instance.Data.ListIdSkinSpin);
             SaveGameData.SaveData(eData.CurrentLanguage, GameData.Instance.Data.CurrentLanguage);
+            SaveGameData.SaveData(eData.SelectedShopBgId, GameData.Instance.Data.SelectedShopBgId);
+            SaveGameData.SaveData(eData.ListShopBgOwned, GameData.Instance.Data.ListShopBgOwned);
+            SaveGameData.SaveData(eData.ItemShopStates, GameData.Instance.Data.ItemShopStates);
         }
 
         public static void LoadAllData()
@@ -68,6 +71,9 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadData(eData.CountDownTimeSpin, ref GameData.Instance.Data.CountDownTimeSpin);
             SaveGameData.LoadData(eData.ListIdSkinSpin, ref GameData.Instance.Data.ListIdSkinSpin);
             SaveGameData.LoadData(eData.CurrentLanguage, ref GameData.Instance.Data.CurrentLanguage);
+            SaveGameData.LoadData(eData.SelectedShopBgId, ref GameData.Instance.Data.SelectedShopBgId);
+            SaveGameData.LoadData(eData.ListShopBgOwned, ref GameData.Instance.Data.ListShopBgOwned);
+            SaveGameData.LoadData(eData.ItemShopStates, ref GameData.Instance.Data.ItemShopStates);
         }
     }
 }

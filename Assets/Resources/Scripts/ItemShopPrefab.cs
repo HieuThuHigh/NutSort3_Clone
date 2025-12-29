@@ -31,23 +31,28 @@ public class ItemShopPrefab : MonoBehaviour
     {
         buyGoldBtn.onClick.AddListener(ButtonBuyWGold);
         buyAdsBtn.onClick.AddListener(ButtonBuyWAds);
+        CheckBuyAds();
     }
+
+    void CheckBuyAds()
+    {
+        ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+
+        if (itemShopState.CountWatched >= data.TargetAds)
+        {
+            lockIcon.gameObject.SetActive(false);
+            buyAdsBtn.gameObject.SetActive(false);
+        }
+    }
+
     public void Init(ItemInfo itemInfo)
     {
         data = itemInfo;
         icon.sprite = data.icon;
-        
+
         buyGoldBtn.gameObject.SetActive(false);
         buyAdsBtn.gameObject.SetActive(false);
 
-        if (data.isOwned)
-        {
-            lockIcon.gameObject.SetActive(false);
-            return;
-        }
-
-        lockIcon.gameObject.SetActive(true);
-        
         if (data.isGold)
         {
             buyGoldBtn.gameObject.SetActive(true);
@@ -56,19 +61,12 @@ public class ItemShopPrefab : MonoBehaviour
 
         if (data.isAds)
         {
-            if (data.adsWatched >= data.adsRequire)
-            {
-                data.isOwned = true;
-                lockIcon.gameObject.SetActive(false);
-            }
-            else
-            {
-                buyAdsBtn.gameObject.SetActive(true);
-                adsCountTxt.text = $"{data.adsWatched}/{data.adsRequire}";
-            }
+            ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+            buyAdsBtn.gameObject.SetActive(true);
+            adsCountTxt.text = $"{itemShopState.CountWatched}/{data.TargetAds}";
         }
     }
-    
+
     private void ButtonBuyWGold()
     {
         int price = data.goldPrice;
@@ -77,32 +75,35 @@ public class ItemShopPrefab : MonoBehaviour
             GameData.Instance.SpendItem(new CurrencyInfo(ItemResourceType.Coin, price),
                 true, AnalyticID.LocationTracking.buygold);
             this.PostEvent(EventID.UpdateData);
-            data.isOwned = true;
             buyGoldBtn.gameObject.SetActive(false);
             lockIcon.gameObject.SetActive(false);
         }
     }
+
     private void ButtonBuyWAds()
     {
-        if (data.adsWatched >= data.adsRequire) return;
-        
         API.Instance.ShowReward(success =>
         {
             if (success)
             {
-                data.adsWatched++;
-                
-                if (data.adsWatched >= data.adsRequire)
+                ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+                itemShopState.IsAds = true;
+                itemShopState.CountWatched++;
+                if (itemShopState.CountWatched >= data.TargetAds)
                 {
-                    data.isOwned = true;
+                    itemShopState.IsUnlock = true;
+                    Debug.LogError(itemShopState.CountWatched);
                     buyAdsBtn.gameObject.SetActive(false);
                     lockIcon.gameObject.SetActive(false);
                 }
                 else
                 {
-                    adsCountTxt.text = $"{data.adsWatched}/{data.adsRequire}";
+                    buyAdsBtn.gameObject.SetActive(true);
+                    adsCountTxt.text = $"{itemShopState.CountWatched}/{data.TargetAds}";
                 }
+
+                GameData.Instance.SetItemShopState(itemShopState);
             }
-        },AnalyticID.LocationTracking.buyads);
+        }, AnalyticID.LocationTracking.buyads);
     }
 }

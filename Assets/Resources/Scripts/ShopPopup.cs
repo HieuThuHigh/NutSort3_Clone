@@ -47,31 +47,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
         coinAdsButton.onClick.AddListener(CoinAdsClick);
         SpawnItems(ringItemData, ringItemPrefab, ringContent);
         SpawnItems(bgItemData, bgItemPrefab, bgContent);
-        if (GameData.Instance.FirstOpen)
-        {
-            ResetAllAdsProgress();
-        }
         SwitchTab(0);
-    }
-    void ResetAllAdsProgress()
-    {
-        foreach (var item in ringItemData.items)
-        {
-            item.adsWatched = 0;
-            item.isOwned = false;
-        }
-        
-        foreach (var item in bgItemData.items)
-        {
-            item.adsWatched = 0;
-            item.isOwned = false;
-        }
-        
-        // Lưu ScriptableObject
-        #if UNITY_EDITOR
-        UnityEditor.EditorUtility.SetDirty(ringItemData);
-        UnityEditor.EditorUtility.SetDirty(bgItemData);
-        #endif
     }
     private void CoinAdsClick()
     {
@@ -85,13 +61,10 @@ public class ShopPopup : SingletonUI<ShopPopup>
 
     void SpawnItems(ItemData data, ItemShopPrefab prefab, Transform targetContent)
     {
-        // Xóa item cũ trong content đó
         foreach (Transform child in targetContent)
         {
             Destroy(child.gameObject);
         }
-
-        // Sinh item mới
         foreach (var info in data.items)
         {
             ItemShopPrefab item =

@@ -22,8 +22,7 @@ public class ItemInfo
 
     [Header("UI Value")]
     public int goldPrice;
-    public int adsRequire;
-    public int adsWatched;
-    public bool isOwned;
-    
+
+    public int TargetAds = 5;
+
 }

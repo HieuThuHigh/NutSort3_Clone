@@ -25,8 +25,8 @@ namespace GameToolSample.GameDataScripts.Scripts
         {
             base.Awake();
             SaveGameData.LoadAllData();
-            
         }
+
         public int SelectedShopBgId
         {
             get => Data.SelectedShopBgId;
@@ -36,6 +36,7 @@ namespace GameToolSample.GameDataScripts.Scripts
                 SaveGameData.SaveData(eData.SelectedShopBgId, Data.SelectedShopBgId);
             }
         }
+
         public List<int> ListShopBgOwned
         {
             get => Data.ListShopBgOwned;
@@ -45,6 +46,7 @@ namespace GameToolSample.GameDataScripts.Scripts
                 SaveGameData.SaveData(eData.ListShopBgOwned, Data.ListShopBgOwned);
             }
         }
+
         public void OnAllDataLoaded()
         {
             SetDataFake();
@@ -330,6 +332,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         #endregion LEVEL
 
         #region CURRENCY
+
         public void AddCurrency(ItemResourceType itemType, int value)
         {
             switch (itemType)
@@ -343,8 +346,10 @@ namespace GameToolSample.GameDataScripts.Scripts
                     DiamondFake += value;
                     break;
             }
+
             this.PostEvent(EventID.UpdateData);
         }
+
         public void AddCurrencySetFake(ItemResourceType itemType, int value, bool setFake = false)
         {
             switch (itemType)
@@ -360,6 +365,7 @@ namespace GameToolSample.GameDataScripts.Scripts
                         DiamondFake += value;
                     break;
             }
+
             if (setFake)
                 this.PostEvent(EventID.UpdateData);
         }
@@ -486,6 +492,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         }
 
         public String TimeWatchAdsInShop;
+
         #endregion SPIN
 
         #region LANGUAGE
@@ -568,6 +575,63 @@ namespace GameToolSample.GameDataScripts.Scripts
 #if USE_FALCON
             new FResourceLog(FlowType.Sink, location, currencyInfo.itemResourceType.ToString(), location, currencyInfo.value).Send();
 #endif
+        }
+
+        public Int32 CurrentLanguage
+        {
+            get => Data.CurrentLanguage;
+            set
+            {
+                Data.CurrentLanguage = value;
+                SaveGameData.SaveData(eData.CurrentLanguage, Data.CurrentLanguage);
+            }
+        }
+
+
+        public List<ItemShopState> ItemShopStates
+        {
+            get => Data.ItemShopStates;
+            set
+            {
+                Data.ItemShopStates = value;
+                SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
+            }
+        }
+
+        public ItemShopState GetItemShopState(int id)
+        {
+            for (int i = 0; i < Data.ItemShopStates.Count; i++)
+            {
+                if (id == Data.ItemShopStates[i].IdItem)
+                {
+                    return Data.ItemShopStates[i];
+                }
+            }
+
+            ItemShopState newItemShopState = new ItemShopState();
+            newItemShopState.IdItem = id;
+            Data.ItemShopStates.Add(newItemShopState);
+            SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
+            return newItemShopState;
+        }
+
+        public void SetItemShopState(ItemShopState itemShopState)
+        {
+            if (!Data.ItemShopStates.Contains(itemShopState))
+            {
+                Data.ItemShopStates.Add(itemShopState);
+            }
+            else
+            {
+                for (int i = 0; i < Data.ItemShopStates.Count; i++)
+                {
+                    if (itemShopState.IdItem == Data.ItemShopStates[i].IdItem)
+                    {
+                        Data.ItemShopStates[i] = itemShopState;
+                    }
+                }
+            }
+            SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
         }
 // AUTO GENERATE
     }

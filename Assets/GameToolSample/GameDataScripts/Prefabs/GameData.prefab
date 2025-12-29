@@ -78,6 +78,7 @@ MonoBehaviour:
     CurrentLanguage: 0
     SelectedShopBgId: 0
     ListShopBgOwned: 
+    ItemShopStates: []
   GameModeData:
     GameMode: 0
     Level: 0

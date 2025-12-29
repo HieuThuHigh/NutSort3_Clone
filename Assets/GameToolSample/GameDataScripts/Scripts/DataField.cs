@@ -61,6 +61,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         [Header("ITEM")] public int SelectedShopBgId;
         public List<int> ListShopBgOwned;
 
+        public List<ItemShopState> ItemShopStates = new List<ItemShopState>();
 
     }
 
@@ -133,4 +134,15 @@ namespace GameToolSample.GameDataScripts.Scripts
                 return level == other.level && gameMode == other.gameMode;
             }
         }
+
+    [Serializable]
+    // custom kiểu dữ liệu lưu
+    public class ItemShopState
+    {
+        public int IdItem; // id của item để so sánh
+        public bool IsAds; // check có phải dùng ads ko
+        public int CountWatched; // số lượng ads
+        public bool IsUnlock; // mở khóa chưa
+
+    }
 }
