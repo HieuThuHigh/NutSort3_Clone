@@ -143,6 +143,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         public bool IsAds; // check có phải dùng ads ko
         public int CountWatched; // số lượng ads
         public bool IsUnlock; // mở khóa chưa
+        public bool IsBoughtWithCoin; // đã mua bằng coin chưa
 
     }
 }

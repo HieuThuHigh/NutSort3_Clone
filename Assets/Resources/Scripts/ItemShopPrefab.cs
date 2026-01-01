@@ -26,25 +26,31 @@ public class ItemShopPrefab : MonoBehaviour
     [SerializeField] TMP_Text adsCountTxt;
 
     ItemInfo data;
-
     private void Start()
     {
         buyGoldBtn.onClick.AddListener(ButtonBuyWGold);
         buyAdsBtn.onClick.AddListener(ButtonBuyWAds);
-        CheckBuyAds();
+        choseBtn.onClick.AddListener(ChoseItemEvent);
+        CheckItemState(); // Đổi tên từ CheckBuyAds
     }
 
-    void CheckBuyAds()
+    private void ChoseItemEvent()
+    {
+        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    }
+
+    void CheckItemState()
     {
         ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
 
-        if (itemShopState.CountWatched >= data.TargetAds)
+        if (itemShopState.IsBoughtWithCoin || itemShopState.CountWatched >= data.TargetAds)
         {
             lockIcon.gameObject.SetActive(false);
             buyAdsBtn.gameObject.SetActive(false);
+            buyGoldBtn.gameObject.SetActive(false);
+            choseBtn.gameObject.SetActive(true);
         }
     }
-
     public void Init(ItemInfo itemInfo)
     {
         data = itemInfo;
@@ -52,6 +58,14 @@ public class ItemShopPrefab : MonoBehaviour
 
         buyGoldBtn.gameObject.SetActive(false);
         buyAdsBtn.gameObject.SetActive(false);
+
+        ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+    
+        if (itemShopState.IsBoughtWithCoin || itemShopState.IsUnlock)
+        {
+            lockIcon.gameObject.SetActive(false);
+            return;
+        }
 
         if (data.isGold)
         {
@@ -61,7 +75,6 @@ public class ItemShopPrefab : MonoBehaviour
 
         if (data.isAds)
         {
-            ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
             buyAdsBtn.gameObject.SetActive(true);
             adsCountTxt.text = $"{itemShopState.CountWatched}/{data.TargetAds}";
         }
@@ -74,6 +87,12 @@ public class ItemShopPrefab : MonoBehaviour
         {
             GameData.Instance.SpendItem(new CurrencyInfo(ItemResourceType.Coin, price),
                 true, AnalyticID.LocationTracking.buygold);
+        
+            ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+            itemShopState.IsBoughtWithCoin = true;
+            itemShopState.IsUnlock = true;
+            GameData.Instance.SetItemShopState(itemShopState);
+        
             this.PostEvent(EventID.UpdateData);
             buyGoldBtn.gameObject.SetActive(false);
             lockIcon.gameObject.SetActive(false);
@@ -106,4 +125,5 @@ public class ItemShopPrefab : MonoBehaviour
             }
         }, AnalyticID.LocationTracking.buyads);
     }
+    
 }
