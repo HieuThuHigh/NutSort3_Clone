@@ -15,7 +15,7 @@ public class ItemInfo
 {
     public int id;
     public Sprite icon;
-
+    public ItemType itemType;
     [Header("Buy Type")]
     public bool isGold;
     public bool isAds;
@@ -25,4 +25,9 @@ public class ItemInfo
 
     public int TargetAds = 5;
 
+}
+public enum ItemType
+{
+    Background,
+    Ring
 }

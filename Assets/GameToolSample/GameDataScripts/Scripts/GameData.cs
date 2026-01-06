@@ -36,6 +36,15 @@ namespace GameToolSample.GameDataScripts.Scripts
                 SaveGameData.SaveData(eData.SelectedShopBgId, Data.SelectedShopBgId);
             }
         }
+        public int SelectedShopRingId
+        {
+            get => Data.SelectedShopRingId;
+            set
+            {
+                Data.SelectedShopRingId = value;
+                SaveGameData.SaveData(eData.SelectedShopRingId, Data.SelectedShopRingId);
+            }
+        }
 
         public List<int> ListShopBgOwned
         {

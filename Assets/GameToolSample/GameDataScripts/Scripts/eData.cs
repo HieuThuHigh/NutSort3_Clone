@@ -33,6 +33,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         ListIdSkinSpin,
         CurrentLanguage,
         SelectedShopBgId,
+        SelectedShopRingId,
         ListShopBgOwned,
         ItemShopStates,
     }

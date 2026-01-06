@@ -36,7 +36,12 @@ public class ItemShopPrefab : MonoBehaviour
 
     private void ChoseItemEvent()
     {
-        Debug.LogError("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        ItemShopState itemShopState = GameData.Instance.GetItemShopState(data.id);
+        if (itemShopState.IsBoughtWithCoin || itemShopState.CountWatched >= data.TargetAds)
+        {
+
+            ShopPopup.Instance.OnItemSelected(data);
+        }
     }
 
     void CheckItemState()
@@ -96,6 +101,7 @@ public class ItemShopPrefab : MonoBehaviour
             this.PostEvent(EventID.UpdateData);
             buyGoldBtn.gameObject.SetActive(false);
             lockIcon.gameObject.SetActive(false);
+            CheckItemState();
         }
     }
 
@@ -114,6 +120,7 @@ public class ItemShopPrefab : MonoBehaviour
                     Debug.LogError(itemShopState.CountWatched);
                     buyAdsBtn.gameObject.SetActive(false);
                     lockIcon.gameObject.SetActive(false);
+                     CheckItemState();
                 }
                 else
                 {

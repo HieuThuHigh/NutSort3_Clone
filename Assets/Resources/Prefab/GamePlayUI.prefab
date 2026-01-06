@@ -993,6 +993,7 @@ MonoBehaviour:
   uiType: 0
   uiName: 0
   homeButton: {fileID: 6660637308190645152}
+  shopButton: {fileID: 5772536503981413529}
 --- !u!1 &7352360950477890345
 GameObject:
   m_ObjectHideFlags: 0

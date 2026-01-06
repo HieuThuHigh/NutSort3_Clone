@@ -9,12 +9,18 @@ using UnityEngine.UI;
 public class GamePlayUi : BaseUI
 {
     [SerializeField] private Button homeButton;
+    [SerializeField] private Button shopButton;
 
     private void Start()
     {
         homeButton.onClick.AddListener(HomeEvent);
+        shopButton.onClick.AddListener(ShopEvent);
     }
 
+    private void ShopEvent()
+    {
+        CanvasManager.Instance.Push(eUIName.ShopPopup);
+    }
     private void HomeEvent()
     {
         CanvasManager.Instance.Push(eUIName.Home);

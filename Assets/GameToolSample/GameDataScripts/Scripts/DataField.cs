@@ -59,6 +59,7 @@ namespace GameToolSample.GameDataScripts.Scripts
 
         [Header("LANGUAGE")] public int CurrentLanguage;
         [Header("ITEM")] public int SelectedShopBgId;
+        [Header("ITEM")] public int SelectedShopRingId;
         public List<int> ListShopBgOwned;
 
         public List<ItemShopState> ItemShopStates = new List<ItemShopState>();
