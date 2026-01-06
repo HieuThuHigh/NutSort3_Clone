@@ -32,9 +32,16 @@ public class SettingPopup : BaseUI
     private void OnEnable()
     {
         UpdateUI();
-        SetUpUI();
+        CheckHomeButton();
     }
 
+    void CheckHomeButton()
+    {
+        if (GameConfig.Instance.IsHome == true)
+        {
+            continueObj.gameObject.SetActive(false);
+        }
+    }
     private void VibraClick()
     {
         GameData.Instance.Vibrate = !GameData.Instance.Vibrate;
@@ -63,8 +70,4 @@ public class SettingPopup : BaseUI
         vibraImage.sprite = GameData.Instance.Vibrate ? btnSprites[0] : btnSprites[1];
     }
 
-    private void SetUpUI()
-    {
-        continueObj.SetActive(!GameConfig.Instance.IsHome);
-    }
 }

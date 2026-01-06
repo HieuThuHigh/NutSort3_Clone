@@ -58,10 +58,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
         SwitchTab(0);
     }
 
-    private void Update()
-    {
-        UnityEngine.Debug.LogError(DateTime.Now);
-    }
     private void OnEnable()
     {
         if (string.IsNullOrEmpty(GameData.Instance.TimeWatchAds))
@@ -194,6 +190,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
                 Instantiate(prefab, targetContent);
 
             item.Init(info);
+            
         }
     }
 
