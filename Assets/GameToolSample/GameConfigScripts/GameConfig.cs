@@ -1,6 +1,10 @@
 using System;
 using GameTool.Assistants.DesignPattern;
+using GameTool.UI.Scripts.CanvasPopup;
 using GameToolSample.Scripts.UI.ResourcesItems;
+using GameToolSample.UIFeature.BasicPopup;
+using GameToolSample.UIFeature.BasicPopup.Scripts;
+using GameToolSample.UIManager;
 using UnityEngine;
 
 namespace GameToolSample.GameConfigScripts

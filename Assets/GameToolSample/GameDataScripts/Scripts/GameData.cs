@@ -7,6 +7,7 @@ using Falcon.FalconAnalytics.Scripts.Models.Messages.PreDefines;
 #endif
 
 using GameTool.Assistants.DesignPattern;
+using GameTool.Assistants.DictionarySerialize;
 using GameTool.GameDataScripts;
 using GameToolSample.GameConfigScripts;
 using GameToolSample.Scripts.Enum;
@@ -36,6 +37,7 @@ namespace GameToolSample.GameDataScripts.Scripts
                 SaveGameData.SaveData(eData.SelectedShopBgId, Data.SelectedShopBgId);
             }
         }
+
         public int SelectedShopRingId
         {
             get => Data.SelectedShopRingId;
@@ -500,7 +502,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             }
         }
 
-        public String TimeWatchAdsInShop;
+        public string TimeWatchAds;
 
         #endregion SPIN
 
@@ -640,7 +642,18 @@ namespace GameToolSample.GameDataScripts.Scripts
                     }
                 }
             }
+
             SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
+        }
+
+        public Dict<LevelPlayInfoKey, LevelPlayInfoData> DictLevelPlayInfoData
+        {
+            get => Data.DictLevelPlayInfoData;
+            set
+            {
+                Data.DictLevelPlayInfoData = value;
+                SaveGameData.SaveData(eData.DictLevelPlayInfoData, Data.DictLevelPlayInfoData);
+            }
         }
 // AUTO GENERATE
     }

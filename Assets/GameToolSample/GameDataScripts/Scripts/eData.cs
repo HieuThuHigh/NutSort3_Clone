@@ -36,5 +36,6 @@ namespace GameToolSample.GameDataScripts.Scripts
         SelectedShopRingId,
         ListShopBgOwned,
         ItemShopStates,
+        TimeWatchAds
     }
 }

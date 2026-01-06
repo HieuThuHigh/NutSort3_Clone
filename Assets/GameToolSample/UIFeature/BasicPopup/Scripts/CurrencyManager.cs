@@ -15,7 +15,7 @@ namespace GameToolSample.UIFeature.BasicPopup.Scripts
         [SerializeField] public Button heartButton;
         [SerializeField] private Button settingButton;
         [SerializeField] private Button _btnAvatar;
-        [SerializeField] private RectTransform posCoin;
+        [SerializeField] public RectTransform posCoin;
         [SerializeField] private RectTransform posDiamond;
 
         public Button CoinButton => coinButton;

@@ -31,7 +31,7 @@ public class ItemShopPrefab : MonoBehaviour
         buyGoldBtn.onClick.AddListener(ButtonBuyWGold);
         buyAdsBtn.onClick.AddListener(ButtonBuyWAds);
         choseBtn.onClick.AddListener(ChoseItemEvent);
-        CheckItemState(); // Đổi tên từ CheckBuyAds
+        CheckItemState();
     }
 
     private void ChoseItemEvent()

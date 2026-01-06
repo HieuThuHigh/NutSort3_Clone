@@ -76,7 +76,6 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadData(eData.SelectedShopRingId, ref GameData.Instance.Data.SelectedShopRingId);
             SaveGameData.LoadData(eData.ListShopBgOwned, ref GameData.Instance.Data.ListShopBgOwned);
             SaveGameData.LoadData(eData.ItemShopStates, ref GameData.Instance.Data.ItemShopStates);
-            
         }
     }
 }

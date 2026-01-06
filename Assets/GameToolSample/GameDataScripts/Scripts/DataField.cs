@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using DatdevUlts.DateTimeScripts;
 using GameTool.Assistants.DictionarySerialize;
 using GameToolSample.Scripts.Enum;
@@ -28,6 +29,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         public float MasterVolume = 1f;
         public float MusicVolume = 1f;
         public float SoundFXVolume = 1f;
+        public long TimeWatchAds = 1;
 
         [Header("RESOURCES")] public int Coin;
 

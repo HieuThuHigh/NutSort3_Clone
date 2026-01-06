@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using GameTool.APIs.Scripts;
 using GameTool.Assistants.DesignPattern;
+using GameTool.Assistants.Helper;
 using GameTool.UI.Scripts.CanvasPopup;
 using GameToolSample.GameConfigScripts;
 using GameToolSample.GameDataScripts.Scripts;
 using GameToolSample.Scripts.Enum;
 using GameToolSample.Scripts.UI.ResourcesItems;
 using GameToolSample.UIFeature.BasicPopup.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +19,8 @@ public class ShopPopup : SingletonUI<ShopPopup>
 {
     [SerializeField] Button backButton;
     [SerializeField] Button coinAdsButton;
+    [SerializeField] GameObject coinAdsButtonWait;
+    [SerializeField] TextMeshProUGUI timeCoinAdsTxt;
     [SerializeField] Button ringTabBtn;
     [SerializeField] Button bgTabBtn;
     public Image bgImg;
@@ -39,7 +43,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
 
     [SerializeField] ItemData ringItemData;
     [SerializeField] ItemData bgItemData;
-
     [SerializeField] private Image ringImg;
     [SerializeField] private Sprite[] backgroundSprites;
 
@@ -55,6 +58,75 @@ public class ShopPopup : SingletonUI<ShopPopup>
         SwitchTab(0);
     }
 
+    private void Update()
+    {
+        UnityEngine.Debug.LogError(DateTime.Now);
+    }
+    private void OnEnable()
+    {
+        if (string.IsNullOrEmpty(GameData.Instance.TimeWatchAds))
+        {
+            coinAdsButton.gameObject.SetActive(true);
+            coinAdsButtonWait.SetActive(false);
+        }
+        else
+        {
+            coinAdsButton.gameObject.SetActive(false);
+            coinAdsButtonWait.SetActive(true);
+            timeCoinAdsTxt.gameObject.SetActive(true); // 👈 THÊM
+            StartCoroutine(CanShowAds());
+
+        }
+    }
+
+    private void CoinAdsClick()
+    {
+        GameData.Instance.AddCurrency(ItemResourceType.Coin, GameConfig.Instance.CoinFreeAds);
+        
+        GameData.Instance.TimeWatchAds = DateTime.Now.ToString();
+        this.PostEvent(EventID.UpdateData);
+        
+        coinAdsButton.gameObject.SetActive(false);
+        coinAdsButtonWait.SetActive(true);
+        timeCoinAdsTxt.gameObject.SetActive(true); // 👈 THÊM
+        StartCoroutine(CanShowAds());
+
+    }
+
+    IEnumerator CanShowAds()
+    {
+        int cooldown = 2 * 60;
+
+        while (true)
+        {
+            if (string.IsNullOrEmpty(GameData.Instance.TimeWatchAds))
+            {
+                coinAdsButton.gameObject.SetActive(true);
+                coinAdsButtonWait.SetActive(false);
+                timeCoinAdsTxt.text = "";
+                yield break;
+            }
+
+            DateTime timeStart = DateTime.Parse(GameData.Instance.TimeWatchAds);
+
+            TimeSpan timePassed = DateTime.Now - timeStart;
+            int remain = cooldown - (int)timePassed.TotalSeconds;
+
+            if (remain <= 0)
+            {
+                coinAdsButton.gameObject.SetActive(true);
+                coinAdsButtonWait.SetActive(false);
+                timeCoinAdsTxt.text = "";
+                yield break;
+            }
+
+            int minutes = remain / 60;
+            int seconds = remain % 60;
+            timeCoinAdsTxt.text = $"{minutes:D2}:{seconds:D2}";
+
+            yield return new WaitForSeconds(1);
+        }
+    }
     public void OnItemSelected(ItemInfo itemInfo)
     {
         if (itemInfo.itemType == ItemType.Background)
@@ -103,16 +175,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
         return null;
     }
 
-    private void CoinAdsClick()
-    {
-        API.Instance.ShowReward(success =>
-        {
-            if (success)
-            {
-                GameData.Instance.AddCurrency(ItemResourceType.Coin, GameConfig.Instance.CoinFreeAds);
-            }
-        }, AnalyticID.LocationTracking.timerewardads);
-    }
 
     private void BackClick()
     {

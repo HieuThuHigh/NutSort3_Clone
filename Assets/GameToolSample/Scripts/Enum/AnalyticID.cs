@@ -166,7 +166,6 @@ namespace GameToolSample.Scripts.Enum
             gameplay = 1,
             buygold = 2,
             buyads = 3,
-            timerewardads = 4,
         }
 
         public enum GameModeName
