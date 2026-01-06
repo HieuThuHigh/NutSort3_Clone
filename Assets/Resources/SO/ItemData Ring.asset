@@ -18,7 +18,7 @@ MonoBehaviour:
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1200
+    goldPrice: 200
     TargetAds: 5
   - id: 101
     icon: {fileID: 21300000, guid: ab6b2df9bf93f5d4ca3dfb80572d3aed, type: 3}
@@ -26,60 +26,60 @@ MonoBehaviour:
     isGold: 0
     isAds: 1
     goldPrice: 0
-    TargetAds: 5
+    TargetAds: 3
   - id: 102
     icon: {fileID: 21300000, guid: 4900cfda36dfcaa45bc1a02ffd8fdedf, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 500
     TargetAds: 5
   - id: 103
     icon: {fileID: 21300000, guid: ed2ed71c834ec5c4dbd7b0cbb5eb2276, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 600
     TargetAds: 5
   - id: 104
     icon: {fileID: 21300000, guid: 9adb87a312282ff4989c4d55e6c19897, type: 3}
     itemType: 1
     isGold: 0
     isAds: 1
-    goldPrice: 0
-    TargetAds: 5
+    goldPrice: 1000
+    TargetAds: 4
   - id: 105
     icon: {fileID: 21300000, guid: 95d8ce734cc608e4a8db149914dd5696, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 1200
     TargetAds: 5
   - id: 106
     icon: {fileID: 21300000, guid: bafaab51b72ef114d84af17745885178, type: 3}
     itemType: 1
     isGold: 0
     isAds: 1
-    goldPrice: 0
-    TargetAds: 5
+    goldPrice: 1500
+    TargetAds: 6
   - id: 7
     icon: {fileID: 21300000, guid: 197674b47653edb438ac415d39cc5fc3, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 1600
     TargetAds: 5
   - id: 107
     icon: {fileID: 21300000, guid: 01945e4dd969e5a45b33f425caf6bed7, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 1800
     TargetAds: 5
   - id: 108
     icon: {fileID: 21300000, guid: e5ff67aa2a75b37438897d6048ccea7c, type: 3}
     itemType: 1
     isGold: 1
     isAds: 0
-    goldPrice: 1234
+    goldPrice: 2000
     TargetAds: 5
