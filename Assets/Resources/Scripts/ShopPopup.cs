@@ -75,6 +75,11 @@ public class ShopPopup : SingletonUI<ShopPopup>
         }
     }
 
+    private void OnDisable()
+    {
+        LoadSelectedItems();
+    }
+
     private void CoinAdsClick()
     {
         GameData.Instance.AddCurrency(ItemResourceType.Coin, GameConfig.Instance.CoinFreeAds);
@@ -143,7 +148,23 @@ public class ShopPopup : SingletonUI<ShopPopup>
         this.PostEvent(EventID.UpdateData);
     }
 
-    private void LoadSelectedItems()
+    public void OnItemPreview(ItemInfo itemInfo)
+    {
+        if (itemInfo.itemType == ItemType.Background)
+        {
+            if (itemInfo.id < backgroundSprites.Length)
+            {
+                bgImg.sprite = backgroundSprites[itemInfo.id];
+            }
+        }
+        else if (itemInfo.itemType == ItemType.Ring)
+        {
+            ringImg.sprite = itemInfo.icon;
+        }
+    }
+
+// ... existing code ...
+    void LoadSelectedItems()
     {
         int selectedBgId = GameData.Instance.SelectedShopBgId;
         if (selectedBgId > 0 && selectedBgId < backgroundSprites.Length)
@@ -174,6 +195,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
 
     private void BackClick()
     {
+        
         Pop();
     }
 

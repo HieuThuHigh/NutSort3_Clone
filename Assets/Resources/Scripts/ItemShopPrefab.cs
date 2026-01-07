@@ -42,6 +42,10 @@ public class ItemShopPrefab : MonoBehaviour
 
             ShopPopup.Instance.OnItemSelected(data);
         }
+        else
+        {
+            ShopPopup.Instance.OnItemPreview(data);
+        }
     }
 
     void CheckItemState()
@@ -98,6 +102,8 @@ public class ItemShopPrefab : MonoBehaviour
             itemShopState.IsUnlock = true;
             GameData.Instance.SetItemShopState(itemShopState);
         
+            ShopPopup.Instance.OnItemSelected(data);
+            
             this.PostEvent(EventID.UpdateData);
             buyGoldBtn.gameObject.SetActive(false);
             lockIcon.gameObject.SetActive(false);
@@ -121,6 +127,7 @@ public class ItemShopPrefab : MonoBehaviour
                     buyAdsBtn.gameObject.SetActive(false);
                     lockIcon.gameObject.SetActive(false);
                      CheckItemState();
+                     ShopPopup.Instance.OnItemSelected(data);
                 }
                 else
                 {
@@ -132,5 +139,4 @@ public class ItemShopPrefab : MonoBehaviour
             }
         }, AnalyticID.LocationTracking.buyads);
     }
-    
 }

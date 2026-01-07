@@ -25,7 +25,6 @@ public class HomeMenu : BaseUI
     {
         GameConfig.Instance.IsHome = true;
     }
-
     private void OnDisable()
     {
         GameConfig.Instance.IsHome = false;
