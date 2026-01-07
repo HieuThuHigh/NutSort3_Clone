@@ -45,7 +45,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
     [SerializeField] ItemData bgItemData;
     [SerializeField] private Image ringImg;
     [SerializeField] private Sprite[] backgroundSprites;
-
     private void Start()
     {
         ringTabBtn.onClick.AddListener(RingTabClick);
@@ -69,7 +68,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
         {
             coinAdsButton.gameObject.SetActive(false);
             coinAdsButtonWait.SetActive(true);
-            timeCoinAdsTxt.gameObject.SetActive(true); // 👈 THÊM
+            timeCoinAdsTxt.gameObject.SetActive(true);
             StartCoroutine(CanShowAds());
 
         }
@@ -89,7 +88,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
         
         coinAdsButton.gameObject.SetActive(false);
         coinAdsButtonWait.SetActive(true);
-        timeCoinAdsTxt.gameObject.SetActive(true); // 👈 THÊM
+        timeCoinAdsTxt.gameObject.SetActive(true);
         StartCoroutine(CanShowAds());
 
     }
@@ -107,7 +106,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
                 timeCoinAdsTxt.text = "";
                 yield break;
             }
-
+            
             DateTime timeStart = DateTime.Parse(GameData.Instance.TimeWatchAds);
 
             TimeSpan timePassed = DateTime.Now - timeStart;
@@ -137,6 +136,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
             if (itemInfo.id < backgroundSprites.Length)
             {
                 bgImg.sprite = backgroundSprites[itemInfo.id];
+                GamePlayUi.Instance.GamePlayImg.sprite = backgroundSprites[itemInfo.id];
             }
         }
         else if (itemInfo.itemType == ItemType.Ring)
@@ -144,7 +144,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
             GameData.Instance.SelectedShopRingId = itemInfo.id;
             ringImg.sprite = itemInfo.icon;
         }
-
         this.PostEvent(EventID.UpdateData);
     }
 
@@ -163,7 +162,6 @@ public class ShopPopup : SingletonUI<ShopPopup>
         }
     }
 
-// ... existing code ...
     void LoadSelectedItems()
     {
         int selectedBgId = GameData.Instance.SelectedShopBgId;

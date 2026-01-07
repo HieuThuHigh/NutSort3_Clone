@@ -15,14 +15,18 @@ namespace GameToolSample.GameConfigScripts
         [SerializeField] private IAPConfig _iapConfig;
         public bool IsHome = false;
         public int CoinFreeAds = 1000;
-        [Header("CONFIG")]
-        [SerializeField] private int _totalLevel = 100;
+        [Header("CONFIG")] [SerializeField] private int _totalLevel = 100;
 
+        [Header("Config Daily Goals")] public int targetTask1 = 4;
+        public int targetTask2 = 8;
+        public int targetTask3 = 15;
         public ItemResourceData ItemResourceData => _itemResourceData;
         public IAPConfig IAPConfig => _iapConfig;
         public int TotalLevel => _totalLevel;
     }
 
     [Serializable]
-    public class IAPConfig { }
+    public class IAPConfig
+    {
+    }
 }

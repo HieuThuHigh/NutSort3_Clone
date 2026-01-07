@@ -38,3 +38,9 @@ MonoBehaviour:
       baseUI: {fileID: 1728155379623334053, guid: 15b5828e44d6faa48a74537e4f4288db, type: 3}
       resourcePath: Prefab/ShopPopup
     isDuplicatedKey: 0
+  - key: DailyGoalsPopup
+    settingUI:
+      UIType: 1
+      baseUI: {fileID: 8540671536372798437, guid: d7e86f97f0985c147b61416513f5dd0c, type: 3}
+      resourcePath: Prefab/DailyGoalsPopup
+    isDuplicatedKey: 0

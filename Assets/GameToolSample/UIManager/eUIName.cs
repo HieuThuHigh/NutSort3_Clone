@@ -13,6 +13,7 @@ namespace GameToolSample.UIManager
         Home,
         GamePlayUI,
         ShopPopup,
+        DailyGoalsPopup,
     }
 
     public enum eUIType

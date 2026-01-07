@@ -6,10 +6,11 @@ using GameToolSample.UIManager;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GamePlayUi : BaseUI
+public class GamePlayUi : SingletonUI<GamePlayUi>
 {
     [SerializeField] private Button homeButton;
     [SerializeField] private Button shopButton;
+    public Image GamePlayImg;
 
     private void Start()
     {

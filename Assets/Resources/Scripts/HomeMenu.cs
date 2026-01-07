@@ -18,6 +18,7 @@ public class HomeMenu : BaseUI
     [SerializeField] private Button settingBtn;
     [SerializeField] private Button shopBtn;
     [SerializeField] private Button playBtn;
+    [SerializeField] private Button dailyBtn;
     [SerializeField] private TextMeshProUGUI currentLevelTxt;
     [SerializeField] private TextMeshProUGUI[] levelTxtList;
 
@@ -26,10 +27,13 @@ public class HomeMenu : BaseUI
         settingBtn.onClick.AddListener(SettingEvent);
         shopBtn.onClick.AddListener(ShopEvent);
         playBtn.onClick.AddListener(PlayEvent);
+        dailyBtn.onClick.AddListener(DailyEvent);
         currentLevelTxt.text = GameData.Instance.CurrentLevel.ToString();
         SetUpLevelText();
         this.RegisterListener(EventID.UpdateData, OnUpdateData);
     }
+
+
     void UpdateLevelDisplay()
     {
         currentLevelTxt.text = GameData.Instance.CurrentLevel.ToString();
@@ -82,6 +86,12 @@ public class HomeMenu : BaseUI
 
     private void PlayEvent()
     {
+        Pop();
         CanvasManager.Instance.Push(eUIName.GamePlayUI);
     }
+    private void DailyEvent()
+    {
+        CanvasManager.Instance.Push(eUIName.DailyGoalsPopup);
+    }
+
 }
