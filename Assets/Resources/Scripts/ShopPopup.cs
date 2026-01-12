@@ -193,7 +193,7 @@ public class ShopPopup : SingletonUI<ShopPopup>
 
     private void BackClick()
     {
-        
+        LoadSelectedItems();
         Pop();
     }
 
