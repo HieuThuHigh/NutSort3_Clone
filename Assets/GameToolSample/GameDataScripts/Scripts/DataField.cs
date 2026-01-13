@@ -139,7 +139,6 @@ namespace GameToolSample.GameDataScripts.Scripts
         }
 
     [Serializable]
-    // custom kiểu dữ liệu lưu
     public class ItemShopState
     {
         public int IdItem; // id của item để so sánh
