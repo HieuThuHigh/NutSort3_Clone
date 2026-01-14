@@ -28,6 +28,20 @@ namespace GameTool.Assistants
             StartCoroutine(LoadSceneStart());
         }
 
+        protected override void Awake()
+        {
+            if (!GameData.Instance.BoughtItemIds.Contains(0))
+            {
+                GameData.Instance.BoughtItemIds.Add(0);
+            }
+
+            if (!GameData.Instance.BoughtItemIdsBG.Contains(0))
+            {
+                GameData.Instance.BoughtItemIdsBG.Add(0);
+            }
+            
+        }
+
         IEnumerator LoadSceneStart()
         {
             fillImage.DOFillAmount(1, 3f).SetEase(Ease.InQuad);

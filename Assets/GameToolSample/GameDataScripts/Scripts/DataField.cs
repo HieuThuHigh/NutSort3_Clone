@@ -29,7 +29,6 @@ namespace GameToolSample.GameDataScripts.Scripts
         public float MasterVolume = 1f;
         public float MusicVolume = 1f;
         public float SoundFXVolume = 1f;
-        public long TimeWatchAds = 1;
 
         [Header("RESOURCES")] public int Coin;
 
@@ -47,6 +46,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         public Dict<LevelPlayInfoKey, LevelPlayInfoData> DictLevelPlayInfoData =
             new Dict<LevelPlayInfoKey, LevelPlayInfoData>();
 
+
         [Header("DAILY REWARD")] [DateTimeAsTicks]
         public long DayLogin = 1;
 
@@ -58,16 +58,18 @@ namespace GameToolSample.GameDataScripts.Scripts
         public long TimeSpin = 1;
         public float CountDownTimeSpin = -1;
         public List<int> ListIdSkinSpin = new List<int>();
+        public List<StateRingList> _stateRingList = new List<StateRingList>();
+        public List<StateBGList> StateBgLists = new List<StateBGList>();
 
         [Header("LANGUAGE")] public int CurrentLanguage;
-        [Header("ITEM")] public int SelectedShopBgId;
-        [Header("ITEM")] public int SelectedShopRingId;
-        public List<int> ListShopBgOwned;
-
-        public List<ItemShopState> ItemShopStates = new List<ItemShopState>();
-
+        public List<int> BoughtItemIds = new List<int>();
+        public List<int> BoughtItemIdsBG = new List<int>();
+        public int SelectedShopRingID;
+        public int SelectedShopBgID;
+        public long TargetTime;
+        public bool IsCounting;
+        public bool IsBuyVipAccess;
     }
-
 
     [Serializable]
     public class SkinAdsProgress
@@ -81,6 +83,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             this.currentProgress = currentProgress;
         }
     }
+
 
     [Serializable]
     public class LevelPlayInfoData
@@ -112,41 +115,42 @@ namespace GameToolSample.GameDataScripts.Scripts
     }
 
     [Serializable]
-        public class LevelPlayInfoKey
+    public class LevelPlayInfoKey
+    {
+        public int level;
+        public AnalyticID.GameModeName gameMode;
+
+        public override bool Equals(object obj)
         {
-            public int level;
-            public AnalyticID.GameModeName gameMode;
-            
-            public override bool Equals(object obj)
+            if (obj is LevelPlayInfoKey && Equals((LevelPlayInfoKey)obj))
             {
-                if (obj is LevelPlayInfoKey && Equals((LevelPlayInfoKey)obj))
-                {
-                    return true;
-                }
-    
-                return false;
+                return true;
             }
-    
-            public override int GetHashCode()
-            {
-                return HashCode.Combine(level, (int)gameMode);
-            }
-    
-            protected bool Equals(LevelPlayInfoKey other)
-            {
-                return level == other.level && gameMode == other.gameMode;
-            }
+
+            return false;
         }
 
-    [Serializable]
-    // custom kiểu dữ liệu lưu
-    public class ItemShopState
-    {
-        public int IdItem; // id của item để so sánh
-        public bool IsAds; // check có phải dùng ads ko
-        public int CountWatched; // số lượng ads
-        public bool IsUnlock; // mở khóa chưa
-        public bool IsBoughtWithCoin; // đã mua bằng coin chưa
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(level, (int)gameMode);
+        }
 
+        protected bool Equals(LevelPlayInfoKey other)
+        {
+            return level == other.level && gameMode == other.gameMode;
+        }
+    }
+
+    [Serializable]
+    public class StateRingList
+    {
+        public int Id;
+        public int RingWatchAdsCount;
+    }
+    [Serializable]
+    public class StateBGList
+    {
+        public int Id;
+        public int BGWatchAdsCount;
     }
 }

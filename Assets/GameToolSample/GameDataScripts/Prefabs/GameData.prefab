@@ -58,7 +58,6 @@ MonoBehaviour:
     MasterVolume: 1
     MusicVolume: 1
     SoundFXVolume: 1
-    TimeWatchAds: 1
     Coin: 0
     Diamond: 0
     VictoryCount: 0
@@ -76,14 +75,18 @@ MonoBehaviour:
     TimeSpin: 1
     CountDownTimeSpin: -1
     ListIdSkinSpin: 
+    _stateRingList: []
+    StateBgLists: []
     CurrentLanguage: 0
-    SelectedShopBgId: 0
-    SelectedShopRingId: 0
-    ListShopBgOwned: 
-    ItemShopStates: []
+    BoughtItemIds: 
+    BoughtItemIdsBG: 
+    SelectedShopRingID: 0
+    SelectedShopBgID: 0
+    TargetTime: 0
+    IsCounting: 0
+    IsBuyVipAccess: 0
   GameModeData:
     GameMode: 0
     Level: 0
   CoinFake: 1000
   DiamondFake: 0
-  TimeWatchAds: 

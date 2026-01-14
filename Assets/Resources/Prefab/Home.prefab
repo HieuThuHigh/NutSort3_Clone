@@ -1330,6 +1330,7 @@ MonoBehaviour:
   shopBtn: {fileID: 8549307102294138602}
   playBtn: {fileID: 7018693006104095334}
   dailyBtn: {fileID: 7718091583278477173}
+  rankingBtn: {fileID: 6142991753940802255}
   currentLevelTxt: {fileID: 9210087080572799815}
   levelTxtList:
   - {fileID: 2141931614484664113}

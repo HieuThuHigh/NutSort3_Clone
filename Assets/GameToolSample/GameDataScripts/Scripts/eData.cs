@@ -31,11 +31,15 @@ namespace GameToolSample.GameDataScripts.Scripts
         TimeSpin,
         CountDownTimeSpin,
         ListIdSkinSpin,
+        _stateRingList,
+        StateBgLists,
         CurrentLanguage,
-        SelectedShopBgId,
-        SelectedShopRingId,
-        ListShopBgOwned,
-        ItemShopStates,
-        TimeWatchAds
+        BoughtItemIds,
+        BoughtItemIdsBG,
+        SelectedShopRingID,
+        SelectedShopBgID,
+        TargetTime,
+        IsCounting,
+        IsBuyVipAccess,
     }
 }

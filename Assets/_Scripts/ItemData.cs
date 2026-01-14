@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 [CreateAssetMenu(
     fileName = "ItemData",
@@ -15,17 +17,14 @@ public class ItemInfo
 {
     public int id;
     public Sprite icon;
-    public ItemType itemType;
-    [Header("Buy Type")]
-    public bool isGold;
+    [Header("Buy Type")] public bool isGold;
+
     public bool isAds;
-
-    [Header("UI Value")]
-    public int goldPrice;
-
-    public int TargetAds = 5;
-
+    public ItemType ItemType;
+    [Header("UI Value")] public int goldPrice;
+    public int TargetAds;
 }
+
 public enum ItemType
 {
     Background,

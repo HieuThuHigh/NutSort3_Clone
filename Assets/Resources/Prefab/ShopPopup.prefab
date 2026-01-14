@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 7928803110358191549}
   - component: {fileID: 8929039797495927512}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1899,7 +1899,6 @@ MonoBehaviour:
   timeCoinAdsTxt: {fileID: 8929039797495927512}
   ringTabBtn: {fileID: 3834528927461571139}
   bgTabBtn: {fileID: 6682995871177493207}
-  bgImg: {fileID: 6658223502828506903}
   iconRingTab: {fileID: 4543309684653718075}
   iconBgTab: {fileID: 3014869997234862502}
   ringTabStateSprs:
@@ -1922,6 +1921,7 @@ MonoBehaviour:
   ringItemData: {fileID: 11400000, guid: ea595aba700b8c545875e8a24388a027, type: 2}
   bgItemData: {fileID: 11400000, guid: ba7512958758f9e4abb6c016920f2af3, type: 2}
   ringImg: {fileID: 1409630673507710006}
+  bgImg: {fileID: 6658223502828506903}
   backgroundSprites:
   - {fileID: 21300000, guid: 47b3f23e56c6a0a43860777ecebb6b91, type: 3}
   - {fileID: 21300000, guid: 6a64f884e1f84604f8332879c0533fa5, type: 3}
@@ -1932,6 +1932,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 66d72ba98ee28a54990bb4a05493b13e, type: 3}
   - {fileID: 21300000, guid: 16b2f6c6f7c018047bca6f80453e0648, type: 3}
   - {fileID: 21300000, guid: 018b54d9e98667b4b92a42a5dc383cb2, type: 3}
+  ringSprites:
+  - {fileID: 21300000, guid: 67b274afaad5ba54588547702809a0d1, type: 3}
+  - {fileID: 21300000, guid: ab6b2df9bf93f5d4ca3dfb80572d3aed, type: 3}
+  - {fileID: 21300000, guid: 4900cfda36dfcaa45bc1a02ffd8fdedf, type: 3}
+  - {fileID: 21300000, guid: ed2ed71c834ec5c4dbd7b0cbb5eb2276, type: 3}
+  - {fileID: 21300000, guid: 9adb87a312282ff4989c4d55e6c19897, type: 3}
+  - {fileID: 21300000, guid: 95d8ce734cc608e4a8db149914dd5696, type: 3}
+  - {fileID: 21300000, guid: bafaab51b72ef114d84af17745885178, type: 3}
+  - {fileID: 21300000, guid: 197674b47653edb438ac415d39cc5fc3, type: 3}
+  - {fileID: 21300000, guid: 01945e4dd969e5a45b33f425caf6bed7, type: 3}
+  - {fileID: 21300000, guid: e5ff67aa2a75b37438897d6048ccea7c, type: 3}
 --- !u!1 &6956786337431084760
 GameObject:
   m_ObjectHideFlags: 0

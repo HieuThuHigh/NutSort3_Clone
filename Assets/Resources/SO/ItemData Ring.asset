@@ -13,73 +13,83 @@ MonoBehaviour:
   m_Name: ItemData Ring
   m_EditorClassIdentifier: 
   items:
-  - id: 100
+  - id: 0
     icon: {fileID: 21300000, guid: 67b274afaad5ba54588547702809a0d1, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 200
+    myProgressAds: 0
     TargetAds: 5
-  - id: 101
+  - id: 1
     icon: {fileID: 21300000, guid: ab6b2df9bf93f5d4ca3dfb80572d3aed, type: 3}
-    itemType: 1
     isGold: 0
     isAds: 1
+    ItemType: 1
     goldPrice: 0
+    myProgressAds: 0
     TargetAds: 3
-  - id: 102
+  - id: 2
     icon: {fileID: 21300000, guid: 4900cfda36dfcaa45bc1a02ffd8fdedf, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 500
+    myProgressAds: 0
     TargetAds: 5
-  - id: 103
+  - id: 3
     icon: {fileID: 21300000, guid: ed2ed71c834ec5c4dbd7b0cbb5eb2276, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 600
+    myProgressAds: 0
     TargetAds: 5
-  - id: 104
+  - id: 4
     icon: {fileID: 21300000, guid: 9adb87a312282ff4989c4d55e6c19897, type: 3}
-    itemType: 1
     isGold: 0
     isAds: 1
+    ItemType: 1
     goldPrice: 1000
+    myProgressAds: 0
     TargetAds: 4
-  - id: 105
+  - id: 5
     icon: {fileID: 21300000, guid: 95d8ce734cc608e4a8db149914dd5696, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 1200
+    myProgressAds: 0
     TargetAds: 5
-  - id: 106
+  - id: 6
     icon: {fileID: 21300000, guid: bafaab51b72ef114d84af17745885178, type: 3}
-    itemType: 1
     isGold: 0
     isAds: 1
+    ItemType: 1
     goldPrice: 1500
+    myProgressAds: 0
     TargetAds: 6
   - id: 7
     icon: {fileID: 21300000, guid: 197674b47653edb438ac415d39cc5fc3, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 1600
+    myProgressAds: 0
     TargetAds: 5
-  - id: 107
+  - id: 8
     icon: {fileID: 21300000, guid: 01945e4dd969e5a45b33f425caf6bed7, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 1800
+    myProgressAds: 0
     TargetAds: 5
-  - id: 108
+  - id: 9
     icon: {fileID: 21300000, guid: e5ff67aa2a75b37438897d6048ccea7c, type: 3}
-    itemType: 1
     isGold: 1
     isAds: 0
+    ItemType: 1
     goldPrice: 2000
+    myProgressAds: 0
     TargetAds: 5

@@ -994,7 +994,18 @@ MonoBehaviour:
   uiName: 0
   homeButton: {fileID: 6660637308190645152}
   shopButton: {fileID: 5772536503981413529}
+  vipBtn: {fileID: 4656404153691535861}
   GamePlayImg: {fileID: 6544686272012397708}
+  backgroundSpritesGamePlay:
+  - {fileID: 21300000, guid: 47b3f23e56c6a0a43860777ecebb6b91, type: 3}
+  - {fileID: 21300000, guid: 6a64f884e1f84604f8332879c0533fa5, type: 3}
+  - {fileID: 21300000, guid: 58a6fcf6f7d68cb4287b1a953da6839f, type: 3}
+  - {fileID: 21300000, guid: aa6857656de62ba4b850c7c478588c4a, type: 3}
+  - {fileID: 21300000, guid: d04deabcfdddbaa49be602a8a519978c, type: 3}
+  - {fileID: 21300000, guid: 3b2b558f40742fa4da3b593454aa01a2, type: 3}
+  - {fileID: 21300000, guid: 66d72ba98ee28a54990bb4a05493b13e, type: 3}
+  - {fileID: 21300000, guid: 16b2f6c6f7c018047bca6f80453e0648, type: 3}
+  - {fileID: 21300000, guid: 018b54d9e98667b4b92a42a5dc383cb2, type: 3}
 --- !u!1 &7352360950477890345
 GameObject:
   m_ObjectHideFlags: 0

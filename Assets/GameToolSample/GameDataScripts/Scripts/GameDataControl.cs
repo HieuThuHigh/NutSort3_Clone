@@ -34,11 +34,16 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.SaveData(eData.TimeSpin, GameData.Instance.Data.TimeSpin);
             SaveGameData.SaveData(eData.CountDownTimeSpin, GameData.Instance.Data.CountDownTimeSpin);
             SaveGameData.SaveData(eData.ListIdSkinSpin, GameData.Instance.Data.ListIdSkinSpin);
+            SaveGameData.SaveData(eData._stateRingList, GameData.Instance.Data._stateRingList);
+            SaveGameData.SaveData(eData.StateBgLists, GameData.Instance.Data.StateBgLists);
             SaveGameData.SaveData(eData.CurrentLanguage, GameData.Instance.Data.CurrentLanguage);
-            SaveGameData.SaveData(eData.SelectedShopBgId, GameData.Instance.Data.SelectedShopBgId);
-            SaveGameData.SaveData(eData.SelectedShopRingId, GameData.Instance.Data.SelectedShopRingId);
-            SaveGameData.SaveData(eData.ListShopBgOwned, GameData.Instance.Data.ListShopBgOwned);
-            SaveGameData.SaveData(eData.ItemShopStates, GameData.Instance.Data.ItemShopStates);
+            SaveGameData.SaveData(eData.BoughtItemIds, GameData.Instance.Data.BoughtItemIds);
+            SaveGameData.SaveData(eData.BoughtItemIdsBG, GameData.Instance.Data.BoughtItemIdsBG);
+            SaveGameData.SaveData(eData.SelectedShopRingID, GameData.Instance.Data.SelectedShopRingID);
+            SaveGameData.SaveData(eData.SelectedShopBgID, GameData.Instance.Data.SelectedShopBgID);
+            SaveGameData.SaveData(eData.TargetTime, GameData.Instance.Data.TargetTime);
+            SaveGameData.SaveData(eData.IsCounting, GameData.Instance.Data.IsCounting);
+            SaveGameData.SaveData(eData.IsBuyVipAccess, GameData.Instance.Data.IsBuyVipAccess);
         }
 
         public static void LoadAllData()
@@ -71,11 +76,16 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadData(eData.TimeSpin, ref GameData.Instance.Data.TimeSpin);
             SaveGameData.LoadData(eData.CountDownTimeSpin, ref GameData.Instance.Data.CountDownTimeSpin);
             SaveGameData.LoadData(eData.ListIdSkinSpin, ref GameData.Instance.Data.ListIdSkinSpin);
+            SaveGameData.LoadData(eData._stateRingList, ref GameData.Instance.Data._stateRingList);
+            SaveGameData.LoadData(eData.StateBgLists, ref GameData.Instance.Data.StateBgLists);
             SaveGameData.LoadData(eData.CurrentLanguage, ref GameData.Instance.Data.CurrentLanguage);
-            SaveGameData.LoadData(eData.SelectedShopBgId, ref GameData.Instance.Data.SelectedShopBgId);
-            SaveGameData.LoadData(eData.SelectedShopRingId, ref GameData.Instance.Data.SelectedShopRingId);
-            SaveGameData.LoadData(eData.ListShopBgOwned, ref GameData.Instance.Data.ListShopBgOwned);
-            SaveGameData.LoadData(eData.ItemShopStates, ref GameData.Instance.Data.ItemShopStates);
+            SaveGameData.LoadData(eData.BoughtItemIds, ref GameData.Instance.Data.BoughtItemIds);
+            SaveGameData.LoadData(eData.BoughtItemIdsBG, ref GameData.Instance.Data.BoughtItemIdsBG);
+            SaveGameData.LoadData(eData.SelectedShopRingID, ref GameData.Instance.Data.SelectedShopRingID);
+            SaveGameData.LoadData(eData.SelectedShopBgID, ref GameData.Instance.Data.SelectedShopBgID);
+            SaveGameData.LoadData(eData.TargetTime, ref GameData.Instance.Data.TargetTime);
+            SaveGameData.LoadData(eData.IsCounting, ref GameData.Instance.Data.IsCounting);
+            SaveGameData.LoadData(eData.IsBuyVipAccess, ref GameData.Instance.Data.IsBuyVipAccess);
         }
     }
 }

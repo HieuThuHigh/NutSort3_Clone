@@ -28,36 +28,6 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadAllData();
         }
 
-        public int SelectedShopBgId
-        {
-            get => Data.SelectedShopBgId;
-            set
-            {
-                Data.SelectedShopBgId = value;
-                SaveGameData.SaveData(eData.SelectedShopBgId, Data.SelectedShopBgId);
-            }
-        }
-
-        public int SelectedShopRingId
-        {
-            get => Data.SelectedShopRingId;
-            set
-            {
-                Data.SelectedShopRingId = value;
-                SaveGameData.SaveData(eData.SelectedShopRingId, Data.SelectedShopRingId);
-            }
-        }
-
-        public List<int> ListShopBgOwned
-        {
-            get => Data.ListShopBgOwned;
-            set
-            {
-                Data.ListShopBgOwned = value;
-                SaveGameData.SaveData(eData.ListShopBgOwned, Data.ListShopBgOwned);
-            }
-        }
-
         public void OnAllDataLoaded()
         {
             SetDataFake();
@@ -502,8 +472,6 @@ namespace GameToolSample.GameDataScripts.Scripts
             }
         }
 
-        public string TimeWatchAds;
-
         #endregion SPIN
 
         #region LANGUAGE
@@ -599,53 +567,6 @@ namespace GameToolSample.GameDataScripts.Scripts
         }
 
 
-        public List<ItemShopState> ItemShopStates
-        {
-            get => Data.ItemShopStates;
-            set
-            {
-                Data.ItemShopStates = value;
-                SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
-            }
-        }
-
-        public ItemShopState GetItemShopState(int id)
-        {
-            for (int i = 0; i < Data.ItemShopStates.Count; i++)
-            {
-                if (id == Data.ItemShopStates[i].IdItem)
-                {
-                    return Data.ItemShopStates[i];
-                }
-            }
-
-            ItemShopState newItemShopState = new ItemShopState();
-            newItemShopState.IdItem = id;
-            Data.ItemShopStates.Add(newItemShopState);
-            SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
-            return newItemShopState;
-        }
-
-        public void SetItemShopState(ItemShopState itemShopState)
-        {
-            if (!Data.ItemShopStates.Contains(itemShopState))
-            {
-                Data.ItemShopStates.Add(itemShopState);
-            }
-            else
-            {
-                for (int i = 0; i < Data.ItemShopStates.Count; i++)
-                {
-                    if (itemShopState.IdItem == Data.ItemShopStates[i].IdItem)
-                    {
-                        Data.ItemShopStates[i] = itemShopState;
-                    }
-                }
-            }
-
-            SaveGameData.SaveData(eData.ItemShopStates, Data.ItemShopStates);
-        }
-
         public Dict<LevelPlayInfoKey, LevelPlayInfoData> DictLevelPlayInfoData
         {
             get => Data.DictLevelPlayInfoData;
@@ -655,6 +576,88 @@ namespace GameToolSample.GameDataScripts.Scripts
                 SaveGameData.SaveData(eData.DictLevelPlayInfoData, Data.DictLevelPlayInfoData);
             }
         }
+
+
+        public Int32 SelectedShopRingID
+        {
+            get => Data.SelectedShopRingID;
+            set
+            {
+                Data.SelectedShopRingID = value;
+                SaveGameData.SaveData(eData.SelectedShopRingID, Data.SelectedShopRingID);
+            }
+        }
+
+        public Int32 SelectedShopBgID
+        {
+            get => Data.SelectedShopBgID;
+            set
+            {
+                Data.SelectedShopBgID = value;
+                SaveGameData.SaveData(eData.SelectedShopBgID, Data.SelectedShopBgID);
+            }
+        }
+
+        public Boolean IsBuyVipAccess
+        {
+            get => Data.IsBuyVipAccess;
+            set
+            {
+                Data.IsBuyVipAccess = value;
+                SaveGameData.SaveData(eData.IsBuyVipAccess, Data.IsBuyVipAccess);
+            }
+        }
+
+        public List<Int32> BoughtItemIds
+        {
+            get => Data.BoughtItemIds;
+            set
+            {
+                Data.BoughtItemIds = value;
+                SaveGameData.SaveData(eData.BoughtItemIds, Data.BoughtItemIds);
+            }
+        }
+
+        public List<Int32> BoughtItemIdsBG
+        {
+            get => Data.BoughtItemIdsBG;
+            set
+            {
+                Data.BoughtItemIdsBG = value;
+                SaveGameData.SaveData(eData.BoughtItemIdsBG, Data.BoughtItemIdsBG);
+            }
+        }
+
+        public Int64 TargetTime
+        {
+            get => Data.TargetTime;
+            set
+            {
+                Data.TargetTime = value;
+                SaveGameData.SaveData(eData.TargetTime, Data.TargetTime);
+            }
+        }
+
+        public List<StateRingList> _stateRingList
+        {
+            get => Data._stateRingList;
+            set
+            {
+                Data._stateRingList = value;
+                SaveGameData.SaveData(eData._stateRingList, Data._stateRingList);
+            }
+        }
+
+        public List<StateBGList> StateBgLists
+        {
+            get => Data.StateBgLists;
+            set
+            {
+                Data.StateBgLists = value;
+                SaveGameData.SaveData(eData.StateBgLists, Data.StateBgLists);
+            }
+        }
+        
 // AUTO GENERATE
     }
 
@@ -663,5 +666,18 @@ namespace GameToolSample.GameDataScripts.Scripts
     {
         public AnalyticID.GameModeName GameMode;
         public int Level;
+    }
+
+    [System.Serializable]
+    public class ItemAdProgress
+    {
+        public string id;
+        public int progress;
+
+        public ItemAdProgress(string _id, int _progress)
+        {
+            id = _id;
+            progress = _progress;
+        }
     }
 }

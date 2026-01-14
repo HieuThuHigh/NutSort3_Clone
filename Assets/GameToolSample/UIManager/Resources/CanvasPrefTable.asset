@@ -44,3 +44,15 @@ MonoBehaviour:
       baseUI: {fileID: 8540671536372798437, guid: d7e86f97f0985c147b61416513f5dd0c, type: 3}
       resourcePath: Prefab/DailyGoalsPopup
     isDuplicatedKey: 0
+  - key: VipPopup
+    settingUI:
+      UIType: 1
+      baseUI: {fileID: 8544289147732322489, guid: dc3148b7c51bac64cbb4930c9438437a, type: 3}
+      resourcePath: Prefab/VipPopup
+    isDuplicatedKey: 0
+  - key: RankingPopup
+    settingUI:
+      UIType: 1
+      baseUI: {fileID: 951924155388941391, guid: b8eb4965098ad63468ba1a9a7f3fcb8d, type: 3}
+      resourcePath: Prefab/RankingPopup
+    isDuplicatedKey: 0
