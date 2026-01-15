@@ -21,7 +21,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         [Header("DATA INFO")] public static bool allDataLoaded;
         public DataField Data;
         public GameModeData GameModeData;
-
+        
         protected override void Awake()
         {
             base.Awake();
@@ -658,6 +658,33 @@ namespace GameToolSample.GameDataScripts.Scripts
             }
         }
         
+public Int32 CurrentStar
+{
+    get => Data.CurrentStar;
+    set
+    {
+        Data.CurrentStar = value;
+        SaveGameData.SaveData(eData.CurrentStar, Data.CurrentStar);
+    }
+}
+public List<UserRanking> UserRanking
+{
+    get => Data.UserRanking;
+    set
+    {
+        Data.UserRanking = value;
+        SaveGameData.SaveData(eData.UserRanking, Data.UserRanking);
+    }
+}
+public Boolean IsCounting
+{
+    get => Data.IsCounting;
+    set
+    {
+        Data.IsCounting = value;
+        SaveGameData.SaveData(eData.IsCounting, Data.IsCounting);
+    }
+}
 // AUTO GENERATE
     }
 

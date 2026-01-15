@@ -20,6 +20,7 @@ namespace GameToolSample.GameConfigScripts
         [Header("Config Daily Goals")] public int targetTask1 = 4;
         public int targetTask2 = 8;
         public int targetTask3 = 15;
+        public int starRewardWeek = 6;
         public ItemResourceData ItemResourceData => _itemResourceData;
         public long timeRewardAds = 120;
         public IAPConfig IAPConfig => _iapConfig;

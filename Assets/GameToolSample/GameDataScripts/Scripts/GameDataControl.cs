@@ -24,6 +24,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.SaveData(eData.VictoryCount, GameData.Instance.Data.VictoryCount);
             SaveGameData.SaveData(eData.LoseCount, GameData.Instance.Data.LoseCount);
             SaveGameData.SaveData(eData.CurrentLevel, GameData.Instance.Data.CurrentLevel);
+            SaveGameData.SaveData(eData.CurrentStar, GameData.Instance.Data.CurrentStar);
             SaveGameData.SaveData(eData.LevelUnlocked, GameData.Instance.Data.LevelUnlocked);
             SaveGameData.SaveData(eData.ListLevelUnlockID, GameData.Instance.Data.ListLevelUnlockID);
             SaveGameData.SaveData(eData.DictLevelPlayInfoData, GameData.Instance.Data.DictLevelPlayInfoData);
@@ -36,6 +37,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.SaveData(eData.ListIdSkinSpin, GameData.Instance.Data.ListIdSkinSpin);
             SaveGameData.SaveData(eData._stateRingList, GameData.Instance.Data._stateRingList);
             SaveGameData.SaveData(eData.StateBgLists, GameData.Instance.Data.StateBgLists);
+            SaveGameData.SaveData(eData.UserRanking, GameData.Instance.Data.UserRanking);
             SaveGameData.SaveData(eData.CurrentLanguage, GameData.Instance.Data.CurrentLanguage);
             SaveGameData.SaveData(eData.BoughtItemIds, GameData.Instance.Data.BoughtItemIds);
             SaveGameData.SaveData(eData.BoughtItemIdsBG, GameData.Instance.Data.BoughtItemIdsBG);
@@ -66,6 +68,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadData(eData.VictoryCount, ref GameData.Instance.Data.VictoryCount);
             SaveGameData.LoadData(eData.LoseCount, ref GameData.Instance.Data.LoseCount);
             SaveGameData.LoadData(eData.CurrentLevel, ref GameData.Instance.Data.CurrentLevel);
+            SaveGameData.LoadData(eData.CurrentStar, ref GameData.Instance.Data.CurrentStar);
             SaveGameData.LoadData(eData.LevelUnlocked, ref GameData.Instance.Data.LevelUnlocked);
             SaveGameData.LoadData(eData.ListLevelUnlockID, ref GameData.Instance.Data.ListLevelUnlockID);
             SaveGameData.LoadData(eData.DictLevelPlayInfoData, ref GameData.Instance.Data.DictLevelPlayInfoData);
@@ -78,6 +81,7 @@ namespace GameToolSample.GameDataScripts.Scripts
             SaveGameData.LoadData(eData.ListIdSkinSpin, ref GameData.Instance.Data.ListIdSkinSpin);
             SaveGameData.LoadData(eData._stateRingList, ref GameData.Instance.Data._stateRingList);
             SaveGameData.LoadData(eData.StateBgLists, ref GameData.Instance.Data.StateBgLists);
+            SaveGameData.LoadData(eData.UserRanking, ref GameData.Instance.Data.UserRanking);
             SaveGameData.LoadData(eData.CurrentLanguage, ref GameData.Instance.Data.CurrentLanguage);
             SaveGameData.LoadData(eData.BoughtItemIds, ref GameData.Instance.Data.BoughtItemIds);
             SaveGameData.LoadData(eData.BoughtItemIdsBG, ref GameData.Instance.Data.BoughtItemIdsBG);

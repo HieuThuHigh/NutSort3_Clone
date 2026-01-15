@@ -11,16 +11,23 @@ public class GamePlayUi : SingletonUI<GamePlayUi>
 {
     [SerializeField] private Button homeButton;
     [SerializeField] private Button shopButton;
+    [SerializeField] private Button rankingButton;
     public Button vipBtn;
     public Image GamePlayImg;
     [SerializeField] private Sprite[] backgroundSpritesGamePlay;
     private void Start()
     {
         homeButton.onClick.AddListener(HomeEvent);
+        rankingButton.onClick.AddListener(RankButtonEvent);
         shopButton.onClick.AddListener(ShopEvent);
         vipBtn.onClick.AddListener(VipEvent);
     }
-    
+
+    private void RankButtonEvent()
+    {
+        CanvasManager.Instance.Push(eUIName.RankingPopup);
+    }
+
     private void OnEnable()
     {
         CheckBackGroudGamePlay();

@@ -39,7 +39,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         public int LoseCount;
 
         [Header("LEVEL")] public int CurrentLevel = 1;
-
+        public int CurrentStar = 0;
         public int LevelUnlocked = 1;
         public List<int> ListLevelUnlockID = new List<int> { 0 };
 
@@ -60,6 +60,7 @@ namespace GameToolSample.GameDataScripts.Scripts
         public List<int> ListIdSkinSpin = new List<int>();
         public List<StateRingList> _stateRingList = new List<StateRingList>();
         public List<StateBGList> StateBgLists = new List<StateBGList>();
+        public List<UserRanking> UserRanking = new List<UserRanking>();
 
         [Header("LANGUAGE")] public int CurrentLanguage;
         public List<int> BoughtItemIds = new List<int>();
@@ -147,10 +148,18 @@ namespace GameToolSample.GameDataScripts.Scripts
         public int Id;
         public int RingWatchAdsCount;
     }
+
     [Serializable]
     public class StateBGList
     {
         public int Id;
         public int BGWatchAdsCount;
+    }
+
+    [Serializable]
+    public class UserRanking
+    {
+        public string userName;
+        public int star;
     }
 }

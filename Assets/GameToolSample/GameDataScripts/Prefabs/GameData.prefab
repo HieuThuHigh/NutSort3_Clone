@@ -63,6 +63,7 @@ MonoBehaviour:
     VictoryCount: 0
     LoseCount: 0
     CurrentLevel: 1
+    CurrentStar: 0
     LevelUnlocked: 1
     ListLevelUnlockID: 00000000
     DictLevelPlayInfoData:
@@ -77,6 +78,7 @@ MonoBehaviour:
     ListIdSkinSpin: 
     _stateRingList: []
     StateBgLists: []
+    UserRanking: []
     CurrentLanguage: 0
     BoughtItemIds: 
     BoughtItemIdsBG: 

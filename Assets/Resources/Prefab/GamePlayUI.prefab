@@ -994,6 +994,7 @@ MonoBehaviour:
   uiName: 0
   homeButton: {fileID: 6660637308190645152}
   shopButton: {fileID: 5772536503981413529}
+  rankingButton: {fileID: 8377012017788350527}
   vipBtn: {fileID: 4656404153691535861}
   GamePlayImg: {fileID: 6544686272012397708}
   backgroundSpritesGamePlay:
